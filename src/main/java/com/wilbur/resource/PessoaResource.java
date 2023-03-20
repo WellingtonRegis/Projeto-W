@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Path("/usuario")
 public class PessoaResource {
@@ -40,5 +41,12 @@ public class PessoaResource {
         Pessoa pessoaPegaNoBanco = pessoaService.buscarUmaPessoaNoBanco(pessoa);
         return pessoaPegaNoBanco.getNome();
     }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Pessoa> list(){
+        return Pessoa.listAll();
+    }
 
-}
+
+
+    }

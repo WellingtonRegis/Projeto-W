@@ -1,12 +1,17 @@
 package com.wilbur.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
 public class Pessoa extends PanacheEntity {
 
-    public Long id;
     public String nome;
     public String cpf;
     public String email;
@@ -15,21 +20,13 @@ public class Pessoa extends PanacheEntity {
     public Pessoa() {
     }
 
-    public Pessoa(Long id, String nome, String cpf, String email, String telefone) {
-        this.id = id;
+    public Pessoa( String nome, String cpf, String email, String telefone) {
+
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.telefone = telefone;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    }                                                                                                                                                                                                                                                                                                                                     
 
     public String getNome() {
         return nome;
