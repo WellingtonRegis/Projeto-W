@@ -17,7 +17,7 @@ public class PessoaResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public String recebendoUsuarioDoPost(String json) {
         JSONObject jsonObj = new JSONObject(json);
 
